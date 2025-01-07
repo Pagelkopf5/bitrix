@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\CrudController;
 
-Route::post('/', [Controller::class, 'verify']);
+Route::post('/', [CrudController::class, 'verify']);
 
 Route::get('/', function () {
     return 'Hello World';
