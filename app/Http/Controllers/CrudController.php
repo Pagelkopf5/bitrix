@@ -103,12 +103,6 @@ class CrudController extends Controller
 
     private function callBitrixAPI(string $url, array $data = [], int $auth = self::BITRIX_AUTH)
     {
-
-        if (!is_array($data)) {
-            throw new \Exception('Data must be an array');
-        }
-
-
         $query = http_build_query($data);
         $result = Bitrix::ConnectionBitrix($query, $url, $auth);
         return json_decode($result, true);

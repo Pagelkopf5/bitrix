@@ -4,7 +4,7 @@ namespace App\Connection;
 
 class Bitrix
 {
-    public static function ConnectionBitrix($queryData, $queryUrl, $ssl_verify)
+    public static function ConnectionBitrix($query, $queryUrl, $ssl_verify)
     {
         $queryUrl1 = env('BITRIX24_WEBHOOK_URL') . $queryUrl;
 
@@ -12,7 +12,7 @@ class Bitrix
             'http' => [
                 'header'  => "Content-type: application/x-www-form-urlencoded",
                 'method'  => 'POST',
-                'content' => http_build_query($queryData),
+                'content' => $query,
                 'ignore_errors' => true,
             ],
             'ssl' => [
