@@ -54,7 +54,7 @@ class CrudController extends Controller
             'crm.company.add',
             ['fields' => [
                 'TITLE' => $validated['company_name'],
-                'EMAIL' => $validated['email'],
+                'EMAIL' => [['VALUE' => $validated['email'], 'VALUE_TYPE' => 'WORK']],
             ]]
         ));
 
@@ -81,7 +81,7 @@ class CrudController extends Controller
             'ID' => $id,
             'fields' => [
                 'TITLE' => $validated['company_name'],
-                'EMAIL' => $validated['email'],
+                'EMAIL' => [['VALUE' => $validated['email'], 'VALUE_TYPE' => 'WORK']],
             ],
         ]);
 
