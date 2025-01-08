@@ -8,7 +8,7 @@ use App\Connection\Bitrix;
 class CrudController extends Controller
 {
     const BITRIX_AUTH = 0;
-    const BITRIX_SELECT_ALL = ['select' => ["*"]];
+    const BITRIX_SELECT_ALL = ['select' => ["*", "EMAIL"]];
 
     public function verify(Request $request)
     {
